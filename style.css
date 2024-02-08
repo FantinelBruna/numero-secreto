@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --font-family: "Quicksand", sans-serif;
+  --bg-color: #618264;
+  --primary-color: #d0e7d2;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.mensagem {
+  font-size: 1.5em;
+  margin-top: 40px;
+}
+
+.box {
+  border: 2px solid var(--primary-color);
+  display: inline-block;
+  font-size: 3em;
+  padding: 10px;
+  margin: 20px;
+}
+
+.jogar-novamente {
+  font-size: 1.5em;
+  padding: 10px 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  margin-top: 20px;
+}
