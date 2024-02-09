@@ -1,8 +1,19 @@
+const somAplausos = new Audio("cheering-and-clapping-crowd-2-6029.mp3");
+
 function verificaçãoChute() {
   const numero = +chute;
 
   if (chuteInvalido(numero)) {
-    elementoChute.innerHTML += `<div> <i class="fa-solid fa-xmark"></i> Valor inválido!</div>`;
+    if (chute.toUpperCase() === "GAME OVER") {
+      document.body.innerHTML = `
+      <h2>GAME OVER!</h2>
+      <h3>Pressione o botão para tentar novamente:</h3>
+      <button id='jogar-novamente' class='jogar-novamente'>jogar novamente</button>`
+      document.body.style.backgroundColor = "#e07070";
+      document.getElementById('jogar-novamente').style.background = '#e07070';
+    } else {
+      elementoChute.innerHTML += `<div> <i class="fa-solid fa-xmark"></i> Valor inválido!</div>`;
+    }
     return;
   }
 
@@ -12,10 +23,11 @@ function verificaçãoChute() {
   }
 
   if (numero === numeroSecreto) {
-    document.body.innerHTML = `<h2><i class="fa-solid fa-champagne-glasses"></i> Parabens! Você acertou! <i class="fa-solid fa-champagne-glasses"></i> </h2>
+    document.body.innerHTML = `<h2><i class="fa-solid fa-champagne-glasses"></i> Parabéns! Você acertou! <i class="fa-solid fa-champagne-glasses"></i> </h2>
     <h3>O número secreto era ${numeroSecreto}! </h3>
     
     <button id='jogar-novamente' class='jogar-novamente'>jogar novamente</button>`;
+    somAplausos.play();
   } else if (numero > numeroSecreto) {
     elementoChute.innerHTML += `<div><i class="fa-solid fa-angle-down"></i> O número secreto é menor <i class="fa-solid fa-angle-down"></i></div>`;
   } else {
